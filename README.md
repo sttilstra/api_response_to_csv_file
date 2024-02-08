@@ -1,1 +1,4 @@
 # azure_fuction_with_power_automate
+
+This script was created for use as an azure function. It is triggered by a power automate flow where the user passes a bid identifier and optional version number along with the triggering request.
+The function calls an api with that information and creates class objects based on the response. It also interacts with a sql database to add additional data not available soley from the api response. It then creates a csv file in memory and uploads it to blob storage. The flow then moves the file to a sharepoint site for consumption by the end user. Uploading to blob storage first was chosen because of difficulties in trying to upload the file directly to sharepoint. The flow deletes the file upload to blob storage once the transfer to the sharepoint site is completed.
