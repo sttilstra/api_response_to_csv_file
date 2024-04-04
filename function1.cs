@@ -29,7 +29,7 @@ namespace Project_Azure_Function
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             var API_USERNAME = "<username>";
-            var API_PASSWORD = "<password>";
+            var API_PASSWORD = Environment.GetEnvironmentVariable("API_PASSWORD");
 
 
             // gets current datetime for use with filename output.
@@ -176,7 +176,7 @@ namespace Project_Azure_Function
 
             //// create AZ client
 
-            var account_key = "<account_key>";
+            var account_key = Environment.GetEnvironmentVariable("ACCOUNT_KEY");
             var storage_account_name = "<name>";
             var container_name = "<container name>";
             var az_connection_string = $@"<connstring>;
